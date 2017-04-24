@@ -40,6 +40,20 @@ module.exports = {
         // test to see if a file is going to be included or not. here we use regex to include all .js files.
         test: /\.js$/,
         loader: 'babel-loader'
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          {
+            // allows webpack to read and understand css
+            loader: 'css-loader',
+            // do not bundle images in bundle.js
+            options: {
+              url: false
+            }
+          }
+        ]
       }
     ]
   }

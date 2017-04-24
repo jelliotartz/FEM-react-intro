@@ -1,22 +1,23 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import MyTitle from './MyTitle'
+// just get render function from react-dom. means we don't have to get all of ReactDOM, and use ReactDOM.render
+import { render } from 'react-dom'
+import '../public/normalize.css'
+import '../public/style.css'
 
-var div = React.DOM.div
-
-// use createFactory for cleaner code in MyFirstComponent. Just a convenience method.
-var MyTitleFactory = React.createFactory(MyTitle)
-
-var MyFirstComponent = React.createClass({
-  render: function () {
+const App = React.createClass({
+  render () {
     return (
-      div(null,
-        MyTitleFactory({title: 'check out my mad props', color: 'peru'}),
-        MyTitleFactory({title: 'izzy bear', color: 'thistle'}),
-        MyTitleFactory({title: 'prop #3 :)', color: 'rebeccapurple'})
-      )
+      // React syntax: get used to writing className, not class. class = js reserved word.
+      <div className='app'>
+        <div className='landing'>
+          <h1>bizzy bear's video emporium</h1>
+          <input type='text' placeholder='search' />
+          <a>or browse all</a>
+        </div>
+      </div>
     )
   }
 })
 
-ReactDOM.render(React.createElement(MyFirstComponent), document.getElementById('app'))
+// need to call render at bottom
+render(<App />, document.getElementById('app'))

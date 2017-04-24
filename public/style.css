@@ -1,5 +1,8 @@
 /*
-   Hi, this is bad CSS, you shouldn't structure your CSS this way. Structurally based CSS is a bad idea because it's inherently brittle; if you change the way your nest something you break it. I'm doing it this way because it's less typing for everyone involved to not have to type long class names
+Hi, this is bad CSS, you shouldn't structure your CSS this way.
+Structurally based CSS is a bad idea because it's inherently brittle; if you
+change the way your nest something you break it. I'm doing it this way because
+it's less typing for everyone involved to not have to type long class names
 */
 
 * {
