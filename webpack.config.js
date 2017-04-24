@@ -34,6 +34,9 @@ module.exports = {
     // if it passes this rule, then apply this transformation. rules = series of objects.
     rules: [
       {
+        // rathern than excluding node_modules (exclude: /node_modules/), we'll specify exactly what we want to include
+        // if a file is not specifically in the js directory, don't run it through babel.
+        include: path.resolve(__dirname, 'js'),
         // test to see if a file is going to be included or not. here we use regex to include all .js files.
         test: /\.js$/,
         loader: 'babel-loader'
