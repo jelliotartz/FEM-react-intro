@@ -10,9 +10,8 @@
     "update-test": "npm run test -- -u",
     "build": "webpack",
     "dev": "webpack-dev-server",
-    "lint": "eslint js/**/*.js server.js",
-    "watch": "webpack --watch",
-    "lint": "standard"
+    "lint": "standard",
+    "watch": "webpack --watch"
   },
   "dependencies": {
     "axios": "0.15.2",
@@ -56,7 +55,7 @@
     "react-test-renderer": "15.3.2",
     "standard": "^10.0.2",
     "style-loader": "0.13.1",
-    "webpack": "2.1.0-beta.25",
+    "webpack": "^2.4.1",
     "webpack-dev-server": "1.16.2"
   },
   "directories": {
