@@ -34,6 +34,13 @@ module.exports = {
     // if it passes this rule, then apply this transformation. rules = series of objects.
     rules: [
       {
+        // auto linting: run this loader before any build process - we don't want to lint the output, we want to lint the input
+        enforce: 'pre',
+        test: /\.js$/,
+        loader: 'eslint-loader',
+        exclude: /node_modules/
+      },
+      {
         // rathern than excluding node_modules (exclude: /node_modules/), we'll specify exactly what we want to include
         // if a file is not specifically in the js directory, don't run it through babel.
         include: path.resolve(__dirname, 'js'),
