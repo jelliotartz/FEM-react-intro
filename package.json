@@ -11,7 +11,8 @@
     "build": "webpack",
     "dev": "webpack-dev-server",
     "lint": "eslint js/**/*.js server.js",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "lint": "standard"
   },
   "dependencies": {
     "axios": "0.15.2",

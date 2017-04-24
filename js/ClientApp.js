@@ -1,3 +1,4 @@
+// http://eslint.org/docs/user-guide/configuring#specifying-globals
 /* global React ReactDOM */
 
 var div = React.DOM.div
