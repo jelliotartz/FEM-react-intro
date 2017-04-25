@@ -19,6 +19,9 @@ module.exports = {
     path: path.join(__dirname, '/public'),
     filename: 'bundle.js'
   },
+  devServer: {
+    publicPath: '/public/'
+  },
   resolve: {
     // if no file type is given in a require statement, this is the progression of file names webpack will go through before it gives up.
     // eg import Bar from ./Bar => 1. is there a file Bar with no extension? 2. is there a file Bar.js? 3. is there a file Bar.json? if no, then give up.
