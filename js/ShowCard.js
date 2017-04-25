@@ -1,18 +1,16 @@
 import React from 'react'
-const { shape, string } = React.PropTypes
+const { string } = React.PropTypes
 
 const ShowCard = React.createClass({
   propTypes: {
-    show: shape({
-      poster: string,
-      title: string,
-      year: string,
-      description: string
-    })
+    poster: string,
+    title: string,
+    year: string,
+    description: string
   },
   render () {
     // ES6 destructuring
-    const { poster, title, year, description } = this.props.show
+    const { poster, title, year, description } = this.props
     return (
       <div className='show-card'>
         <img src={`/public/img/posters/${poster}`} />
