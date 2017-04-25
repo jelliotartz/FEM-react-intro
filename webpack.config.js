@@ -46,6 +46,10 @@ module.exports = {
         exclude: /node_modules/
       },
       {
+        test: /\.json$/,
+        loader: 'json-loader'
+      },
+      {
         // rathern than excluding node_modules (exclude: /node_modules/), we'll specify exactly what we want to include
         // if a file is not specifically in the js directory, don't run it through babel.
         include: path.resolve(__dirname, 'js'),
