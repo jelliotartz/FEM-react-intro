@@ -20,7 +20,9 @@ module.exports = {
     filename: 'bundle.js'
   },
   devServer: {
-    publicPath: '/public/'
+    publicPath: '/public/',
+    // reroute 404s to the homepage
+    historyApiFallback: true
   },
   resolve: {
     // if no file type is given in a require statement, this is the progression of file names webpack will go through before it gives up.
