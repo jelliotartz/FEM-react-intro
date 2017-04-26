@@ -19,11 +19,15 @@ const Search = React.createClass({
           <input onChange={this.handleSearchTermChange} value={this.state.searchTerm} type='text' placeholder='search' />
         </header>
         <div>
-          {preload.shows.map((show) => {
-            return (
-              <ShowCard key={show.imdbID} {...show} />
-            )
-          })}
+          {preload.shows
+            .filter((show) => {
+              return `${show.title} ${show.description}`.toUpperCase().indexOf(this.state.searchTerm.toUpperCase()) >= 0
+            })
+            .map((show) => {
+              return (
+                <ShowCard key={show.imdbID} {...show} />
+              )
+            })}
         </div>
       </div>
     )
