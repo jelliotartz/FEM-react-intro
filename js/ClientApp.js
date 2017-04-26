@@ -23,7 +23,7 @@ const App = React.createClass({
             pattern='/details/:id'
             component={(props) => {
               const shows = preload.shows.filter((show) => props.params.id === show.imdbID)
-              return <Details show={shows  [0]} {...props} />
+              return <Details show={shows[0]} {...props} />
             }}
           />
         </div>
