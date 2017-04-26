@@ -1,0 +1,15 @@
+exports[`test ShowCard snapshot test 1`] = `
+<div
+  className="show-card">
+  <img
+    src="/public/img/posters/undefined" />
+  <div>
+    <h3 />
+    <h4>
+      (
+      )
+    </h4>
+    <p />
+  </div>
+</div>
+`;
