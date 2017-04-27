@@ -2,7 +2,7 @@ import { SET_SEARCH_TERM } from './actions'
 
 // the getInitialState of redux
 const DEFAULT_STATE = {
-  searchTerm: ''
+  searchTerm: 'something random'
 }
 
 // a lot of reducers look very similar to this
@@ -11,8 +11,6 @@ const setSearchTerm = (state, action) => {
   Object.assign(newState, state, {searchTerm: action.searchTerm})
   return newState
 }
-
-
 
 // default parameter: ES6 lets DEFAULT_STATE be set initially in params if it's undefined: const rootReducer = (state = DEFAULT_STATE, action)
 const rootReducer = (state, action) => {
