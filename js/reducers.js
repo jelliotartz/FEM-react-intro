@@ -2,7 +2,7 @@ import { SET_SEARCH_TERM } from './actions'
 
 // the getInitialState of redux
 const DEFAULT_STATE = {
-  searchTerm: 'something random'
+  searchTerm: ''
 }
 
 // a lot of reducers look very similar to this

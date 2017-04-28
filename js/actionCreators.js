@@ -3,6 +3,6 @@ import { SET_SEARCH_TERM } from './actions'
 
 // a function that you call, and it gives you back a correctly shaped action
 export function setSearchTerm (searchTerm) {
-  // ES6 shortened syntax return { type: SET_SEARCH_TERM, searchTerm  }
+  // ES6 shortened syntax return: { type: SET_SEARCH_TERM, searchTerm  }
   return { type: SET_SEARCH_TERM, searchTerm: searchTerm }
 }
