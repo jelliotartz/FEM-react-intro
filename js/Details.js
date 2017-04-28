@@ -1,7 +1,8 @@
 import React from 'react'
-import axios from 'axios'
+import { connect } from 'react-redux'
+import { getOMDBDetails } from './actionCreators'
 import Header from './Header'
-const { shape, string } = React.PropTypes
+const { shape, string, func } = React.PropTypes
 
 const Details = React.createClass({
   propTypes: {
@@ -12,28 +13,22 @@ const Details = React.createClass({
       trailer: string,
       description: string,
       imdbID: string
-    })
-  },
-  getInitialState () {
-    return {
-      omdbData: {}
-    }
+    }),
+    omdbData: shape({
+      imdbID: string
+    }),
+    dispatch: func
   },
   componentDidMount () {
-    axios.get(`http://www.omdbapi.com/?i=${this.props.show.imdbID}`)
-      // returns promise
-      .then((response) => {
-        // this refers to Details - call setState on Details. Using arrow function for .then allows us not to need to add .bind(this) after then
-        this.setState({omdbData: response.data})
-      })
-      .catch((error) => console.error('axios error', error))
+    if (!this.props.omdbData.imdbRating) {
+      this.props.dispatch(getOMDBDetails(this.props.show.imdbID))
+    }
   },
   render () {
     const { title, description, year, poster, trailer } = this.props.show
     let rating
-    // rating will contain either loading state component or data from the api
-    if (this.state.omdbData.imdbRating) {
-      rating = <h3>{this.state.omdbData.imdbRating}</h3>
+    if (this.props.omdbData.imdbRating) {
+      rating = <h3>{this.props.omdbData.imdbRating}</h3>
     } else {
       rating = <img src='/public/img/loading.png' alt='loading indicator' />
     }
@@ -63,4 +58,12 @@ Details.propTypes = {
   params: React.PropTypes.object
 }
 
-export default Details
+// ownProps are the properties coming in from the react component (here, Details) - we need the imdbID from show to select the correct show to provide to Details
+const mapStateToProps = (state, ownProps) => {
+  const omdbData = state.omdbData[ownProps.show.imdbID] ? state.omdbData[ownProps.show.imdbID] : {}
+  return {
+    omdbData
+  }
+}
+
+export default connect(mapStateToProps)(Details)
