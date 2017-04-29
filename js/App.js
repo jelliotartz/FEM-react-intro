@@ -1,13 +1,11 @@
 import React from 'react'
-import { BrowserRouter, Match } from 'react-router'
+import { Match } from 'react-router'
 import { Provider } from 'react-redux'
 import store from './store'
 import Landing from './Landing'
 import Search from './Search'
 import Details from './Details'
 import preload from '../public/data.json'
-import '../public/normalize.css'
-import '../public/style.css'
 
 const App = () => {
   return (
